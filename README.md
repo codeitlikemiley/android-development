@@ -5,7 +5,7 @@ Use Dmenu Scripts to Create Any Device, Run The Device and Delete
 # System Requirements 
 - dmenu
 - archlinux
-- yay package manager
+- yay
 
 # Intall the following in your package Manager ***
   - android sdk 
