@@ -1,0 +1,7 @@
+#!/bin/sh
+# Feed this script a link and it will give dmenu
+# some choice programs to use to open it.
+
+cd /opt/android-sdk/emulator && ./emulator -list-avds | dmenu -i -p "Please Choose A Device:" | xargs -r ./emulator -avd
+
+
