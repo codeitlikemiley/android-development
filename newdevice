@@ -1,0 +1,10 @@
+#!/bin/sh
+
+DEVICE_NAME=$(dmenu -i -p "Name your Device")
+
+DEVICE_ID=$(avdmanager list | grep id: | dmenu -i -p "Choose Device ID" -l 20)
+DEVICE_ID=`echo "$DEVICE_ID" | awk -F'[or ]' '{print $2}'`
+
+SYSTEM_IMAGE=$(sdkmanager --list | sed -n '/system-images/,/x86/p' | awk '{print $1}' | dmenu -i -p "Choose Image" -l 20)
+
+avdmanager create avd -d "$DEVICE_ID" -n "$DEVICE_NAME" -k "$SYSTEM_IMAGE"
