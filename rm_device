@@ -1,0 +1,4 @@
+#!/bin/sh
+name=$(cd /opt/android-sdk/emulator && ./emulator -list-avds |dmenu -i -p "Select Name of Device to Be Deleted")
+
+avdmanager delete avd -n "$name"
